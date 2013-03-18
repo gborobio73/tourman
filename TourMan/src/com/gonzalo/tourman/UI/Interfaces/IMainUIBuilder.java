@@ -1,4 +1,4 @@
-package com.gonzalo.tourman.UI;
+package com.gonzalo.tourman.UI.Interfaces;
 
 import com.vaadin.ui.Component;
 

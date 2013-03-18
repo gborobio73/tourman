@@ -11,7 +11,4 @@ public class MainUI extends UI {
 	protected void init(VaadinRequest request) {
 		new TourmanUI(this, new MainUIBuilder()).Build();
 	}
-
-	
-
 }

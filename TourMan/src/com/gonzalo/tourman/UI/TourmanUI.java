@@ -1,5 +1,6 @@
 package com.gonzalo.tourman.UI;
 
+import com.gonzalo.tourman.UI.Interfaces.IMainUIBuilder;
 import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.UI;

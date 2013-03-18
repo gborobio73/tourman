@@ -6,9 +6,8 @@ import static org.mockito.Mockito.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gonzalo.tourman.UI.IMainUIBuilder;
+import com.gonzalo.tourman.UI.Interfaces.IMainUIBuilder;
 import com.gonzalo.tourman.UI.TourmanUI;
-import com.gonzalo.tourman.UI.Components.MainUIBuilder;
 import com.vaadin.ui.UI;
 
 public class TourmanUITests {
@@ -24,10 +23,16 @@ public class TourmanUITests {
     }
 	
 	@Test
-	public void test() {
+	public void shouldCreateNavigationMenu() {
 		sut.Build();
 		
-		verify(mainUIBuilder).createNavigationMenu();
+		verify(mainUIBuilder).createWelcome();
+	}
+	
+	@Test
+	public void shouldCreateWelcome() {
+		sut.Build();
+		
 		verify(mainUIBuilder).createWelcome();
 	}
 

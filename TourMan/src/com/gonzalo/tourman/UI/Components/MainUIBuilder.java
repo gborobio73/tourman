@@ -1,6 +1,6 @@
 package com.gonzalo.tourman.UI.Components;
 
-import com.gonzalo.tourman.UI.IMainUIBuilder;
+import com.gonzalo.tourman.UI.Interfaces.IMainUIBuilder;
 import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button;
