@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.UI;
+package test.gonzalo.tourman;
 
 import static org.junit.Assert.*;
 
