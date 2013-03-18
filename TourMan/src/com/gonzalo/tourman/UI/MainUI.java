@@ -9,9 +9,9 @@ import com.vaadin.ui.UI;
 public class MainUI extends UI {
 	
 	@Override
-	protected void init(VaadinRequest request) {
-		Injector injector = Guice.createInjector(new UIModule());
-		TourmanUI tourmanUI = injector.getInstance(TourmanUI.class);
+	protected void init(VaadinRequest request) 
+	{
+		TourmanUI tourmanUI = new TourmanUI();
 		setContent(tourmanUI.Build());
 	}
 }
