@@ -16,6 +16,7 @@ public class TourmanUI {
 	public void Build()
 	{
 		HorizontalSplitPanel mainLayout = new HorizontalSplitPanel();
+		
 		mainLayout.setSplitPosition(150, Unit.PIXELS);
 		mainLayout.setLocked(true);
 		mainUI.setContent(mainLayout);
