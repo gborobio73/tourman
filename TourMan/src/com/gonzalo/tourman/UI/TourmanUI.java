@@ -1,29 +1,31 @@
 package com.gonzalo.tourman.UI;
 
 import com.gonzalo.tourman.UI.Interfaces.IMainUIBuilder;
+import com.gonzalo.tourman.UI.Interfaces.ITourmanUI;
+import com.google.inject.Inject;
 import com.vaadin.server.Sizeable.Unit;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.UI;
 
-public class TourmanUI {
+public class TourmanUI implements ITourmanUI{
 	IMainUIBuilder mainUIBuilder;
-	UI mainUI;
-	public TourmanUI (UI mainUI, IMainUIBuilder mainUIBuilder)
+	
+	@Inject
+	public TourmanUI (IMainUIBuilder mainUIBuilder)
 	{
 		this.mainUIBuilder = mainUIBuilder;
-		this.mainUI = mainUI;
 	}
-	
-	public void Build()
+		
+	public Component Build()
 	{
 		HorizontalSplitPanel mainLayout = new HorizontalSplitPanel();
 		
 		mainLayout.setSplitPosition(150, Unit.PIXELS);
 		mainLayout.setLocked(true);
-		mainUI.setContent(mainLayout);
-		
 		mainLayout.addComponent(mainUIBuilder.createNavigationMenu());
 		mainLayout.addComponent(mainUIBuilder.createWelcome());
+		return mainLayout;
 	}
 	
 }

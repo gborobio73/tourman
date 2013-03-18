@@ -14,26 +14,27 @@ public class TourmanUITests {
 
 	TourmanUI sut ;
 	IMainUIBuilder mainUIBuilder;
-	
+	private UI ui;
+	/*
 	@Before
     public void setUp() {
-		UI ui = mock(UI.class);
+		ui = mock(UI.class);
 		mainUIBuilder = mock(IMainUIBuilder.class);
-        sut = new TourmanUI(ui, mainUIBuilder);
+        sut = new TourmanUI(ui);
     }
 	
 	@Test
 	public void shouldCreateNavigationMenu() {
-		sut.Build();
+		sut.Build(mainUIBuilder);
 		
 		verify(mainUIBuilder).createWelcome();
 	}
 	
 	@Test
 	public void shouldCreateWelcome() {
-		sut.Build();
+		sut.Build(mainUIBuilder);
 		
 		verify(mainUIBuilder).createWelcome();
-	}
+	}*/
 
 }

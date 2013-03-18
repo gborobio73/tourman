@@ -21,5 +21,7 @@
 	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=TourMan&amp;ivyXmlPath=ivy.xml&amp;confs=widgetset-compile&amp;ivySettingsPath=%24%7Bworkspace_loc%3ATourMan%2Fivysettings.xml%7D&amp;loadSettingsOnDemand=false&amp;propertyFiles="/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="/Users/Gon/Documents/Tools/mockito-1.9.5/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="lib" path="/Users/Gon/Documents/Tools/guice-3.0/aopalliance.jar"/>
+	<classpathentry kind="lib" path="/Users/Gon/Documents/Tools/guice-3.0/guice-3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
