@@ -7,6 +7,7 @@ import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
@@ -18,6 +19,14 @@ public class MainUIBuilder implements IMainUIBuilder{
 	public MainUIBuilder(IButtonFactory buttonFactory)
 	{
 		this.buttonFactory = buttonFactory;
+	}
+	
+	public HorizontalSplitPanel buildManiLayout() {
+		HorizontalSplitPanel mainLayout = new HorizontalSplitPanel();
+		
+		mainLayout.setSplitPosition(150, Unit.PIXELS);
+		mainLayout.setLocked(true);
+		return mainLayout;
 	}
 	
 	public Component createNavigationMenu() 
