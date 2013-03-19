@@ -5,6 +5,7 @@ import com.gonzalo.tourman.UI.Interfaces.ITourmanUI;
 import com.google.inject.Inject;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.VerticalLayout;
 
 public class TourmanUI implements ITourmanUI{
 	
@@ -17,11 +18,18 @@ public class TourmanUI implements ITourmanUI{
 		
 	}
 		
-	public Component Build()
+	public HorizontalSplitPanel buildContent()
 	{
-		HorizontalSplitPanel mainLayout = mainUIBuilder.buildManiLayout();
-		mainLayout.addComponent(mainUIBuilder.createNavigationMenu());
-		mainLayout.addComponent(mainUIBuilder.createWelcome());
+		UIContext.intialize();
+		
+	    HorizontalSplitPanel mainLayout = mainUIBuilder.buildMainLayout();
+		Component navigationMenu = mainUIBuilder.createNavigationMenu();
+		mainLayout.addComponent(navigationMenu);
+		VerticalLayout workingLayout = mainUIBuilder.createWorkingLayout();
+		mainLayout.addComponent(workingLayout);
+		
+		UIContext.setWorkingLayout(workingLayout);
+		
 		return mainLayout;
 	}
 

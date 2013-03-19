@@ -1,10 +1,10 @@
 package com.gonzalo.tourman.UI.Interfaces;
 
-import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.VerticalLayout;
 
 public interface IMainUIBuilder {
-	public HorizontalSplitPanel buildManiLayout();
-	public Component createNavigationMenu() ;
-	public Component createWelcome();
+	public HorizontalSplitPanel buildMainLayout();
+	public VerticalLayout createNavigationMenu() ;
+	public VerticalLayout createWorkingLayout();
 }

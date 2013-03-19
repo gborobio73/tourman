@@ -21,7 +21,7 @@ public class MainUIBuilder implements IMainUIBuilder{
 		this.buttonFactory = buttonFactory;
 	}
 	
-	public HorizontalSplitPanel buildManiLayout() {
+	public HorizontalSplitPanel buildMainLayout() {
 		HorizontalSplitPanel mainLayout = new HorizontalSplitPanel();
 		
 		mainLayout.setSplitPosition(150, Unit.PIXELS);
@@ -29,7 +29,7 @@ public class MainUIBuilder implements IMainUIBuilder{
 		return mainLayout;
 	}
 	
-	public Component createNavigationMenu() 
+	public VerticalLayout createNavigationMenu() 
 	{
 		VerticalLayout mainMenu = new VerticalLayout();
 		MarginInfo margin = new MarginInfo(true);
@@ -37,18 +37,16 @@ public class MainUIBuilder implements IMainUIBuilder{
 		mainMenu.addStyleName("outlined");
 		mainMenu.setHeight(50.0f, Unit.PERCENTAGE);
 		Label title = new Label("Tourman main menu");
-		Button homeLink = buttonFactory.buildHomeButton();
-		Button addTournamentLink = new Button("Add tournament");
+		Button home = buttonFactory.buildHomeButton();
+		Button addTournament = buttonFactory.buildAddTournamentButton();
 		mainMenu.addComponent(title);
-		mainMenu.addComponent(homeLink );
-		mainMenu.addComponent(addTournamentLink);
+		mainMenu.addComponent(home);
+		mainMenu.addComponent(addTournament);
 		return mainMenu;
 		
 	}
 
-	
-
-	public Component createWelcome() {
+	public VerticalLayout createWorkingLayout() {
 		VerticalLayout welcome = new VerticalLayout();
 		welcome.setMargin(true);
 		welcome.addComponent(new Label("Welcome to tournament manager"));

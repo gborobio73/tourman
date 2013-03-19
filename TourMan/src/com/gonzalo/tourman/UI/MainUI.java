@@ -12,7 +12,7 @@ public class MainUI extends UI {
 	protected void init(VaadinRequest request) 
 	{
 		Injector injector = Guice.createInjector(new UIModule());
-	    TourmanUI tourmanUI = injector.getInstance(TourmanUI.class);
-		setContent(tourmanUI.Build());
+		TourmanUI tourmanUi = injector.getInstance(TourmanUI.class);
+		setContent(tourmanUi.buildContent());
 	}
 }
