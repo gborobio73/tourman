@@ -1,6 +1,6 @@
 package com.gonzalo.tourman.UI.Components;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 import com.gonzalo.tourman.UI.Interfaces.IButtonFactory;
 import com.gonzalo.tourman.UI.Interfaces.IMenuController;
@@ -19,7 +19,9 @@ public class ButtonFactory implements IButtonFactory {
 	}
 	
 	public Button buildHomeButton() {
-		return new Button("Home");
+		Button homeButton= new Button("Home");
+		homeButton.addClickListener(getHomeListener());
+		return homeButton;
 	}
 	
 	public Button buildAddTournamentButton() {
@@ -28,6 +30,17 @@ public class ButtonFactory implements IButtonFactory {
 		return homeLink;
 	}
 
+	private ClickListener getHomeListener() {
+		return new ClickListener() 
+		{
+			@Override
+			public void buttonClick(final ClickEvent event) 
+			{
+				controller.openWelcomeForm();
+			}
+		};
+	}
+	
 	private ClickListener getHomeButtonListener() {
 		return new ClickListener() 
 		{
