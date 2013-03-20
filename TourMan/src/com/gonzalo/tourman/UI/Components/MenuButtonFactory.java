@@ -1,19 +1,16 @@
 package com.gonzalo.tourman.UI.Components;
 
-import com.google.inject.Inject;
-
-import com.gonzalo.tourman.UI.Interfaces.IButtonFactory;
+import com.gonzalo.tourman.UI.Interfaces.IMenuButtonFactory;
 import com.gonzalo.tourman.UI.Interfaces.IMenuController;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 
-public class ButtonFactory implements IButtonFactory {
+public class MenuButtonFactory implements IMenuButtonFactory {
 
 	private IMenuController controller;
 
-	@Inject
-	public ButtonFactory(IMenuController controller)
+	public MenuButtonFactory(IMenuController controller)
 	{
 		this.controller = controller;
 	}

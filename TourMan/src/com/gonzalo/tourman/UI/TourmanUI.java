@@ -1,5 +1,7 @@
 package com.gonzalo.tourman.UI;
 
+import com.gonzalo.tourman.UI.Components.MenuButtonFactory;
+import com.gonzalo.tourman.UI.Components.MenuController;
 import com.gonzalo.tourman.UI.Interfaces.IMainUIBuilder;
 import com.gonzalo.tourman.UI.Interfaces.ITourmanUI;
 import com.google.inject.Inject;
@@ -20,19 +22,19 @@ public class TourmanUI implements ITourmanUI{
 		
 	public HorizontalSplitPanel buildContent()
 	{
-		UIContext.intialize();
-		
+		UIManager uiManager = new UIManager();
+		MenuController menuController= new MenuController(uiManager);
+		MenuButtonFactory buttonFactory = new MenuButtonFactory(menuController);
+				
 	    HorizontalSplitPanel mainLayout = mainUIBuilder.buildMainLayout();
-		Component navigationMenu = mainUIBuilder.createNavigationMenu();
-		mainLayout.addComponent(navigationMenu);
 		VerticalLayout workingLayout = mainUIBuilder.createWorkingLayout();
-		mainLayout.addComponent(workingLayout);
 		
-		UIContext.setWorkingLayout(workingLayout);
+		uiManager.setWorkingLayout(workingLayout);
+		NavigationMenu menu = new NavigationMenu(uiManager, buttonFactory);
+		
+		mainLayout.addComponent(menu.createNavigationMenu());
+		mainLayout.addComponent(workingLayout);
 		
 		return mainLayout;
 	}
-
-	
-	
 }

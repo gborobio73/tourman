@@ -5,6 +5,5 @@ import com.vaadin.ui.VerticalLayout;
 
 public interface IMainUIBuilder {
 	public HorizontalSplitPanel buildMainLayout();
-	public VerticalLayout createNavigationMenu() ;
 	public VerticalLayout createWorkingLayout();
 }
