@@ -1,4 +1,4 @@
-package com.gonzalo.tourman.MVPTourmanUI;
+package com.gonzalo.tourman.MVPTourmanUI.Interfaces;
 
 public interface IWorkingLayoutController {
 

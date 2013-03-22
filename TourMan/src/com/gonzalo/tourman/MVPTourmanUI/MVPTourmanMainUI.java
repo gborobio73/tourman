@@ -1,9 +1,12 @@
 package com.gonzalo.tourman.MVPTourmanUI;
 
+import com.gonzalo.tourman.MVPTourmanUI.Configuration.MVPTourmanUIDependencies;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu.MainMenuPresenter;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu.MainMenuViewImpl;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu.WorkingLayoutController;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -13,8 +16,7 @@ public class MVPTourmanMainUI extends UI {
 	@Override
 	protected void init(VaadinRequest request) {
 		
-		Injector injector = Guice.createInjector(new MVPTourmanUIModule());
-		MainMenuModel menuModel = injector.getInstance(MainMenuModel.class);
+		Injector injector = Guice.createInjector(new MVPTourmanUIDependencies());
 		MainMenuViewImpl menuView = injector.getInstance(MainMenuViewImpl.class);
 		
 		HorizontalSplitPanel mainLayout = new HorizontalSplitPanel();
@@ -24,8 +26,11 @@ public class MVPTourmanMainUI extends UI {
 		final VerticalLayout menuLayout = new VerticalLayout();
 		final VerticalLayout verticalLayout = new VerticalLayout();
 		WorkingLayoutController workingLayoutController = new WorkingLayoutController(verticalLayout);
-		IMainMenuPresenter presenter = new MainMenuPresenter(menuModel, menuView);
-		presenter.setWorkingLayoutController(workingLayoutController);
+		
+		MainMenuPresenter mainMenuPresenter = new MainMenuPresenter();
+		menuView.addMainMenuPresenter(mainMenuPresenter);
+		
+		mainMenuPresenter.setWorkingLayoutController(workingLayoutController);
 		
 		menuLayout.setMargin(true);
 		menuLayout.addComponent(menuView);

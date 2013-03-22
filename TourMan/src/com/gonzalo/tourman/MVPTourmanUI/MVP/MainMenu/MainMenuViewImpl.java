@@ -1,8 +1,11 @@
-package com.gonzalo.tourman.MVPTourmanUI;
+package com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuButtonFactory;
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuListener;
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuView;
 import com.google.inject.Inject;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -31,7 +34,7 @@ public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, 
 	}
 
 	
-	public void addListener(IMainMenuListener mainMenuListener) {
+	public void addMainMenuPresenter(IMainMenuListener mainMenuListener) {
 		listeners.add(mainMenuListener);
 	}
 

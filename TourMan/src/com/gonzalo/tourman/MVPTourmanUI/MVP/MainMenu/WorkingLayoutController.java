@@ -1,8 +1,9 @@
-package com.gonzalo.tourman.MVPTourmanUI;
+package com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu;
 
 import com.gonzalo.tourman.Calculator.CalculatorModel;
 import com.gonzalo.tourman.Calculator.CalculatorPresenter;
 import com.gonzalo.tourman.Calculator.CalculatorViewImpl;
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IWorkingLayoutController;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 
@@ -24,7 +25,7 @@ public class WorkingLayoutController implements IWorkingLayoutController{
 		
 		CalculatorPresenter presenter = new CalculatorPresenter(model, view);
 		
-		view.addPResenter(presenter);
+		view.addPresenter(presenter);
 		
 		layout.addComponent(view);		
 	}

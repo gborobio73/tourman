@@ -1,11 +1,12 @@
-package com.gonzalo.tourman.MVPTourmanUI;
+package com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu;
 
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuButtonFactory;
 import com.vaadin.ui.Button;
 
 public class MainMenuButtonFactory implements IMainMenuButtonFactory {
 
 	public Button buildCalculatorButton() {
-			return new Button("Calculator");	
+		return new Button("Calculator");	
 	}
 
 	public Button buildYeeeeiiiButton() {

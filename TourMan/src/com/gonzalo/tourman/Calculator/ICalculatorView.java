@@ -4,5 +4,5 @@ public interface ICalculatorView {
 
 	public void setDisplay(double value);
 
-    public void addPResenter(ICalculatorViewListener listener);
+    public void addPresenter(ICalculatorViewListener listener);
 }

@@ -1,20 +1,13 @@
-package com.gonzalo.tourman.MVPTourmanUI;
+package com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu;
 
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Notification;
-import com.vaadin.ui.VerticalLayout;
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuListener;
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuPresenter;
+import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IWorkingLayoutController;
+
 
 public class MainMenuPresenter implements IMainMenuListener, IMainMenuPresenter{
 
-	private IMainMenuModel menuModel;
-	private IMainMenuView menuView;
 	private IWorkingLayoutController workingLayoutPresenter;
-
-	public MainMenuPresenter(IMainMenuModel model, IMainMenuView view) {
-		this.menuModel = model;
-		this.menuView = view;
-		view.addListener(this);
-	}
 
 	public void menuOptionSelected(String optionName) {
 			

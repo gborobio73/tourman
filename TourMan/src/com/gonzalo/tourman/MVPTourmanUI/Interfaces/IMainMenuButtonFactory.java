@@ -1,4 +1,4 @@
-package com.gonzalo.tourman.MVPTourmanUI;
+package com.gonzalo.tourman.MVPTourmanUI.Interfaces;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;

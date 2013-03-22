@@ -42,7 +42,7 @@ public class CalculatorViewImpl extends CustomComponent implements ICalculatorVi
         display.setValue(Double.toString(value));
     }
 
-    public void addPResenter(ICalculatorViewListener listener) {
+    public void addPresenter(ICalculatorViewListener listener) {
         listeners.add(listener);
     }
 
