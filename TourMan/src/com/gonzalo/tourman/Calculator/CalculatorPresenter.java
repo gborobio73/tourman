@@ -12,10 +12,6 @@ public class CalculatorPresenter implements ICalculatorViewListener{
 	public CalculatorPresenter(CalculatorModel model, ICalculatorView view) {
 		this.model = model;
 		this.view = view;
-		
-		view.setDisplay(current);            
-        view.addListener(this);
-		
 	}
 
 	@Override
@@ -55,5 +51,4 @@ public class CalculatorPresenter implements ICalculatorViewListener{
         view.setDisplay(model.getValue());
 		
 	}
-
 }

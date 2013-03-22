@@ -5,6 +5,8 @@ import com.vaadin.ui.Component;
 
 public interface IMainMenuButtonFactory {
 
-	Button buildHelloButton();
+	Button buildCalculatorButton();
+
+	Button buildYeeeeiiiButton();
 
 }

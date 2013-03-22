@@ -17,11 +17,15 @@ public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, 
 	@Inject
 	public MainMenuViewImpl(IMainMenuButtonFactory buttonFactory)
 	{
-		// draw the view
 		VerticalLayout layout  = new VerticalLayout();
-		Button helloButton = buttonFactory.buildHelloButton();
+		Button helloButton = buttonFactory.buildCalculatorButton();
 		helloButton.addClickListener(this);
 		layout.addComponent(helloButton);
+		
+		Button anotherButton = buttonFactory.buildYeeeeiiiButton();
+		anotherButton.addClickListener(this);
+		layout.addComponent(anotherButton);
+		
 		
 		setCompositionRoot(layout);
 	}
@@ -34,7 +38,7 @@ public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, 
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for(IMainMenuListener listener : listeners)
-			listener.buttonClick(event.getButton().getCaption());
+			listener.menuOptionSelected(event.getButton().getCaption());
 		
 	}
 

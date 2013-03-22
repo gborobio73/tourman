@@ -42,7 +42,7 @@ public class CalculatorViewImpl extends CustomComponent implements ICalculatorVi
         display.setValue(Double.toString(value));
     }
 
-    public void addListener(ICalculatorViewListener listener) {
+    public void addPResenter(ICalculatorViewListener listener) {
         listeners.add(listener);
     }
 
@@ -52,7 +52,6 @@ public class CalculatorViewImpl extends CustomComponent implements ICalculatorVi
     public void buttonClick(ClickEvent event) {
         for (ICalculatorViewListener listener: listeners)
             listener.buttonClick(event.getButton().getCaption().charAt(0));
-    }
-		
+    }	
 
 }
