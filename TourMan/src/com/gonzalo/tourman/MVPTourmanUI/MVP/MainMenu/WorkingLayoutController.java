@@ -1,9 +1,9 @@
 package com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu;
 
-import com.gonzalo.tourman.Calculator.CalculatorModel;
-import com.gonzalo.tourman.Calculator.CalculatorPresenter;
-import com.gonzalo.tourman.Calculator.CalculatorViewImpl;
 import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IWorkingLayoutController;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorModel;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorPresenter;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorViewImpl;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 

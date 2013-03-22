@@ -1,6 +1,4 @@
-package com.gonzalo.tourman.Calculator;
-
-import com.gonzalo.tourman.Calculator.ICalculatorViewListener;
+package com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator;
 
 public class CalculatorPresenter implements ICalculatorViewListener{
 

@@ -13,7 +13,7 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.VerticalLayout;
 
-public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, ClickListener  {
+public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, ClickListener{
 
 	List<IMainMenuListener> listeners = new ArrayList<IMainMenuListener>();
 	

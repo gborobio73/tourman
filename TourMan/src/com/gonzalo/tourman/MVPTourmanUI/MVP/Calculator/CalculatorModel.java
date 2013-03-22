@@ -1,4 +1,4 @@
-package com.gonzalo.tourman.Calculator;
+package com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator;
 
 public class CalculatorModel {
 private double value = 0.0;
