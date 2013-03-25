@@ -38,6 +38,6 @@ public class WorkingLayoutController implements IWorkingLayoutController{
 
 	public void loadFakDat() {
 		layout.removeAllComponents();
-		Notification.show("Fuck That");
+		Notification.show("That is Erika's button");
 	}
 }
