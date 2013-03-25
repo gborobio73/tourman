@@ -10,12 +10,19 @@ public class MainMenuPresenter implements IMainMenuListener, IMainMenuPresenter{
 	private IWorkingLayoutController workingLayoutPresenter;
 
 	public void menuOptionSelected(String optionName) {
-			
-		//if(button == "Calculator") workingLayoutPresenter.load(formFactory.buildCalculator());
-		if(optionName == "Calculator") workingLayoutPresenter.loadCalculator();
-		else workingLayoutPresenter.loadUnknown() ;
-		//workingLayout.removeAllComponents();
-		//workingLayout.addComponent(new CalculatorView());
+		
+		if(optionName == "Calculator")
+		{
+			workingLayoutPresenter.loadCalculator();
+		}
+		else if(optionName == "Erika")
+		{
+			workingLayoutPresenter.loadFakDat();
+		}
+		else
+		{
+			workingLayoutPresenter.loadUnknown();
+		}
 	}
 
 	public void setWorkingLayoutController(IWorkingLayoutController workingLayoutPresenter) {

@@ -9,4 +9,6 @@ public interface IMainMenuButtonFactory {
 
 	Button buildYeeeeiiiButton();
 
+	Button buildErikaButton();
+
 }

@@ -4,5 +4,6 @@ public interface IWorkingLayoutController {
 
 	void loadCalculator();
 	void loadUnknown();
+	void loadFakDat();
 
 }

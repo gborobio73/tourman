@@ -29,6 +29,9 @@ public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, 
 		anotherButton.addClickListener(this);
 		layout.addComponent(anotherButton);
 		
+		Button erikaButton = buttonFactory.buildErikaButton();
+		erikaButton.addClickListener(this);
+		layout.addComponent(erikaButton);
 		
 		setCompositionRoot(layout);
 	}
@@ -44,5 +47,4 @@ public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, 
 			listener.menuOptionSelected(event.getButton().getCaption());
 		
 	}
-
 }

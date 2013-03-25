@@ -13,4 +13,7 @@ public class MainMenuButtonFactory implements IMainMenuButtonFactory {
 		return new Button("Yeeeiiii");
 	}
 
+	public Button buildErikaButton() {
+		return new Button("Erika");	}
+
 }

@@ -35,4 +35,9 @@ public class WorkingLayoutController implements IWorkingLayoutController{
 		Notification.show("Unknown");
 		
 	}
+
+	public void loadFakDat() {
+		layout.removeAllComponents();
+		Notification.show("Fuck That");
+	}
 }
