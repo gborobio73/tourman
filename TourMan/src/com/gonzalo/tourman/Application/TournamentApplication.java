@@ -13,6 +13,7 @@ public class TournamentApplication {
 	{
 		this.factory = factory;
 	}
+	
 	public void createTournament(String name, String location, Date startDate, Date endDate) 
 	{
 		INewTournament tournament = factory.createTournament(name, location, startDate, endDate);

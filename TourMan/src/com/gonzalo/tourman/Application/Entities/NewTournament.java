@@ -3,6 +3,7 @@ package com.gonzalo.tourman.Application.Entities;
 import java.util.Date;
 
 import com.gonzalo.tourman.Application.INewTournament;
+import com.gonzalo.tourman.Application.Repositories.TournamentRepository;
 
 public class NewTournament implements INewTournament {
 
@@ -10,6 +11,7 @@ public class NewTournament implements INewTournament {
 	private String location;
 	private Date startDate;
 	private Date endDate;
+	private TournamentRepository tournamentRepository = new TournamentRepository();
 
 	public NewTournament(String name, String location, Date startDate, Date endDate) {
 		this.name = name;
@@ -20,7 +22,7 @@ public class NewTournament implements INewTournament {
 
 	public void save() {
 		System.out.println("Tournament "+name+" saved!!!");
-
+		tournamentRepository.add(this);
 	}
 
 }
