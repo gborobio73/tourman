@@ -1,5 +1,7 @@
 package com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator;
 
+import com.google.inject.Inject;
+
 public class CalculatorPresenter implements ICalculatorViewListener{
 
 	private CalculatorModel model;
@@ -7,6 +9,7 @@ public class CalculatorPresenter implements ICalculatorViewListener{
 	private double current = 0.0;
     private char   lastOperationRequested = 'C';
 
+    @Inject
 	public CalculatorPresenter(CalculatorModel model, ICalculatorView view) {
 		this.model = model;
 		this.view = view;

@@ -28,21 +28,20 @@ public class MVPTourmanMainUI extends UI {
 		mainLayout.setSplitPosition(150, Unit.PIXELS);
 		mainLayout.setLocked(true);
 		
-		IVerticalLayout verticalLayout = new TourmanVerticalLayout();
+		IVerticalLayout workingLayout = new TourmanVerticalLayout();
 		IViewsFactory viewsFactory = new ViewsFactory();
-		WorkingLayoutController workingLayoutController = new WorkingLayoutController(verticalLayout, viewsFactory);
+		WorkingLayoutController workingLayoutController = new WorkingLayoutController(workingLayout, viewsFactory);
 		
 		MainMenuPresenter mainMenuPresenter = new MainMenuPresenter();
-		menuView.addMainMenuPresenter(mainMenuPresenter);
-		
 		mainMenuPresenter.setWorkingLayoutController(workingLayoutController);
+		menuView.addMenuListener(mainMenuPresenter);
 		
 		final VerticalLayout menuLayout = new VerticalLayout();
 		menuLayout.setMargin(true);
 		menuLayout.addComponent(menuView);
 		
 		mainLayout.addComponent(menuLayout);
-		mainLayout.addComponent(verticalLayout.get());
+		mainLayout.addComponent(workingLayout.getLayout());
 		
 		setContent(mainLayout);
 	}

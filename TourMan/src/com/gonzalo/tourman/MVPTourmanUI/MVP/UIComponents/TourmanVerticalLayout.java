@@ -12,7 +12,7 @@ public class TourmanVerticalLayout implements IVerticalLayout {
 		this.layout = new VerticalLayout();
 	}
 	
-	public VerticalLayout get() {
+	public VerticalLayout getLayout() {
 		return layout;
 	}
 
@@ -24,6 +24,4 @@ public class TourmanVerticalLayout implements IVerticalLayout {
 		layout.addComponent(component);
 		
 	}
-
-
 }

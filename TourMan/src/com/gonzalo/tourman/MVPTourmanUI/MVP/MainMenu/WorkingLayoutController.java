@@ -19,17 +19,14 @@ public class WorkingLayoutController implements IWorkingLayoutController{
 	public void loadCalculator() {
 		layout.clear();
 		
-		ICustomComponent view = viewsFactory.buildCalculatorPresenter();
+		ICustomComponent view = viewsFactory.buildCalculatorView();
 		
 		layout.addComponent(view.getComponent());		
 	}
 
-	
-
 	public void loadUnknown() {
 		layout.clear();
-		Notification.show("Unknown");
-		
+		Notification.show("Unknown");	
 	}
 
 	public void loadFakDat() {

@@ -37,7 +37,7 @@ public class MainMenuViewImpl extends CustomComponent implements IMainMenuView, 
 	}
 
 	
-	public void addMainMenuPresenter(IMainMenuListener mainMenuListener) {
+	public void addMenuListener(IMainMenuListener mainMenuListener) {
 		listeners.add(mainMenuListener);
 	}
 

@@ -5,7 +5,7 @@ import com.vaadin.ui.VerticalLayout;
 
 public interface IVerticalLayout {
 	
-	public VerticalLayout get();
+	public VerticalLayout getLayout();
 
 	public void clear();
 
