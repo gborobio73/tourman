@@ -1,43 +1,39 @@
 package com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu;
 
 import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IWorkingLayoutController;
-import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorModel;
-import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorPresenter;
-import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorViewImpl;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.UIComponents.ICustomComponent;
+import com.gonzalo.tourman.MVPTourmanUI.MVP.UIComponents.IVerticalLayout;
 import com.vaadin.ui.Notification;
-import com.vaadin.ui.VerticalLayout;
 
 public class WorkingLayoutController implements IWorkingLayoutController{
 
-	private VerticalLayout layout;
+	private IVerticalLayout layout;
+	private IViewsFactory viewsFactory;
 
-	public WorkingLayoutController(VerticalLayout workingLayout)
+	public WorkingLayoutController(IVerticalLayout workingLayout, IViewsFactory viewsFactory)
 	{
 		this.layout = workingLayout;
+		this.viewsFactory = viewsFactory;
 	}
 
 	public void loadCalculator() {
+		layout.clear();
 		
-		layout.removeAllComponents();
+		ICustomComponent view = viewsFactory.buildCalculatorPresenter();
 		
-		CalculatorModel model = new CalculatorModel();
-		CalculatorViewImpl view = new CalculatorViewImpl();
-		
-		CalculatorPresenter presenter = new CalculatorPresenter(model, view);
-		
-		view.addPresenter(presenter);
-		
-		layout.addComponent(view);		
+		layout.addComponent(view.getComponent());		
 	}
 
+	
+
 	public void loadUnknown() {
-		layout.removeAllComponents();
+		layout.clear();
 		Notification.show("Unknown");
 		
 	}
 
 	public void loadFakDat() {
-		layout.removeAllComponents();
+		layout.clear();
 		Notification.show("That is Erika's button");
 	}
 }

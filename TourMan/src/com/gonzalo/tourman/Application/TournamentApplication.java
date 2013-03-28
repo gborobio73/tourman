@@ -2,6 +2,7 @@ package com.gonzalo.tourman.Application;
 
 import java.util.Date;
 
+import com.gonzalo.tourman.Application.Interfaces.INewTournament;
 import com.google.inject.Inject;
 
 public class TournamentApplication {

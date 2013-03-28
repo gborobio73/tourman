@@ -1,7 +1,7 @@
 package com.gonzalo.tourman.Application.Repositories;
 
-import com.gonzalo.tourman.Application.INewTournament;
-import com.gonzalo.tourman.Application.ITournamentRepository;
+import com.gonzalo.tourman.Application.Interfaces.INewTournament;
+import com.gonzalo.tourman.Application.Interfaces.ITournamentRepository;
 
 public class TournamentRepository implements ITournamentRepository{
 

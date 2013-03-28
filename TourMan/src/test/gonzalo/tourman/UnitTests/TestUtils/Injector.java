@@ -36,7 +36,7 @@ public class Injector<T> implements IInjector<T> {
 			}
 		}catch (Exception e)
 		{
-			fail(getErrorMessage(target));
+			fail(e.toString());
 		}
 	}
 

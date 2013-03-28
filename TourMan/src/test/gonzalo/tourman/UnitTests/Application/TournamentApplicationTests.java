@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-import com.gonzalo.tourman.Application.INewTournament;
 import com.gonzalo.tourman.Application.TournamentApplication;
 import com.gonzalo.tourman.Application.TournamentFactory;
+import com.gonzalo.tourman.Application.Interfaces.INewTournament;
 
 public class TournamentApplicationTests {
 

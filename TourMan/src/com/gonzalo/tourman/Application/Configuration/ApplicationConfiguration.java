@@ -1,7 +1,7 @@
 package com.gonzalo.tourman.Application.Configuration;
 
-import com.gonzalo.tourman.Application.ITournamentFactory;
 import com.gonzalo.tourman.Application.TournamentFactory;
+import com.gonzalo.tourman.Application.Interfaces.ITournamentFactory;
 import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuButtonFactory;
 import com.gonzalo.tourman.MVPTourmanUI.Interfaces.IMainMenuView;
 import com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu.MainMenuButtonFactory;

@@ -1,18 +1,18 @@
 package test.gonzalo.tourman.UnitTests.Entities;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import test.gonzalo.tourman.UnitTests.TestUtils.*;
+import test.gonzalo.tourman.UnitTests.TestUtils.Inject;
 
-import com.gonzalo.tourman.Application.INewTournament;
-import com.gonzalo.tourman.Application.ITournamentRepository;
 import com.gonzalo.tourman.Application.Entities.NewTournament;
+import com.gonzalo.tourman.Application.Interfaces.INewTournament;
+import com.gonzalo.tourman.Application.Interfaces.ITournamentRepository;
 
 public class NewTournamentTests {
 
@@ -20,7 +20,7 @@ public class NewTournamentTests {
 	private String location = "location";
 	private Date startDate = mock(Date.class);
 	private Date endDate = mock(Date.class);
-	private NewTournament sut;
+	private INewTournament sut;
 	
 	@Before
 	public void setUp()

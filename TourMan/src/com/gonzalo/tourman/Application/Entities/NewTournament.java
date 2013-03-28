@@ -2,8 +2,8 @@ package com.gonzalo.tourman.Application.Entities;
 
 import java.util.Date;
 
-import com.gonzalo.tourman.Application.INewTournament;
-import com.gonzalo.tourman.Application.ITournamentRepository;
+import com.gonzalo.tourman.Application.Interfaces.INewTournament;
+import com.gonzalo.tourman.Application.Interfaces.ITournamentRepository;
 import com.gonzalo.tourman.Application.Repositories.TournamentRepository;
 
 public class NewTournament implements INewTournament {
@@ -22,7 +22,6 @@ public class NewTournament implements INewTournament {
 	}
 
 	public void save() {
-		System.out.println("Tournament "+name+" saved!!!");
 		tournamentRepository.add(this);
 	}
 
