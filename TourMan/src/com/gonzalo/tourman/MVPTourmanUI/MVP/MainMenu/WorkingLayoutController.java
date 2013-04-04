@@ -7,30 +7,30 @@ import com.vaadin.ui.Notification;
 
 public class WorkingLayoutController implements IWorkingLayoutController{
 
-	private IVerticalLayout layout;
+	private IVerticalLayout workingLayout;
 	private IViewsFactory viewsFactory;
 
 	public WorkingLayoutController(IVerticalLayout workingLayout, IViewsFactory viewsFactory)
 	{
-		this.layout = workingLayout;
+		this.workingLayout = workingLayout;
 		this.viewsFactory = viewsFactory;
 	}
 
 	public void loadCalculator() {
-		layout.clear();
+		workingLayout.clear();
 		
 		ICustomComponent view = viewsFactory.buildCalculatorView();
 		
-		layout.addComponent(view.getComponent());		
+		workingLayout.addComponent(view.getComponent());		
 	}
 
 	public void loadUnknown() {
-		layout.clear();
+		workingLayout.clear();
 		Notification.show("Unknown");	
 	}
 
 	public void loadFakDat() {
-		layout.clear();
+		workingLayout.clear();
 		Notification.show("That is Erika's button");
 	}
 }
