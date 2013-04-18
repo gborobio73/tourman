@@ -1,6 +1,5 @@
 package com.gonzalo.tourman.Application.Repositories;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.cassandra.thrift.ConsistencyLevel;
