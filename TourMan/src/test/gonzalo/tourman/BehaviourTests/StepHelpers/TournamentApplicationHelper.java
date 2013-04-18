@@ -9,7 +9,7 @@ import com.google.inject.Injector;
 
 public class TournamentApplicationHelper {
 	
-	public static void createTournament(String name, String location, Date startDate, Date endDate) 
+	public static void createTournament(String name, String location, Date startDate, Date endDate) throws Exception 
 	{
 		Injector injector = Guice.createInjector(new ApplicationConfiguration());
 		TournamentApplication app = injector.getInstance(TournamentApplication.class);

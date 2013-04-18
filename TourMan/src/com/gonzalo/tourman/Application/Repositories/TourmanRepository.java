@@ -1,5 +1,6 @@
 package com.gonzalo.tourman.Application.Repositories;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.cassandra.thrift.ConsistencyLevel;
@@ -14,23 +15,32 @@ public class TourmanRepository implements ITourmanRepository{
 
 	private HectorPersistenceFactory persistenceFactory;
 
-	public TourmanRepository() throws Exception
-	{
+	public void persist(IPersistable entity) throws Exception {
+		initializePersistenceFactory();
+		
+		persistenceFactory.persist(entity);
+		
+		destroyPersistenceFactory();
+	}
+
+	private void initializePersistenceFactory() throws Exception {
 		String[] contactNodes = new String[]{"127.0.0.1"};
 		int cassandraDefaultPortDefinedInYaml = 9160;
 		List<Class<?>> entities = ClassUtil.get( "com.gonzalo.tourman.Application.Entities", ColumnFamily.class );
 		this.persistenceFactory = new HectorPersistenceFactory.Builder()
-		.defaultConsistencyLevel(ConsistencyLevel.ALL)
-		.clusterName("Test Cluster")
-		.defaultKeySpace("Tourman")
-		.contactNodes(contactNodes)
-		.thriftPort(cassandraDefaultPortDefinedInYaml)
-		.entities(entities)
-		.build();
+			.defaultConsistencyLevel(ConsistencyLevel.ALL)
+			.clusterName("Test Cluster")
+			.defaultKeySpace("Tourman")
+			.contactNodes(contactNodes)
+			.thriftPort(cassandraDefaultPortDefinedInYaml)
+			.entities(entities)
+			.build();
+		
 	}
 	
-	public void persist(IPersistable entity) {
-		persistenceFactory.persist(entity);
+	private void destroyPersistenceFactory() {
+		persistenceFactory.destroy();
 	}
+
 
 }
