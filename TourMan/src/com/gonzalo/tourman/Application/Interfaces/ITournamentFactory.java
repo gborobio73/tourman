@@ -2,8 +2,10 @@ package com.gonzalo.tourman.Application.Interfaces;
 
 import java.util.Date;
 
+import com.gonzalo.tourman.Application.Entities.Tournament;
+
 
 public interface ITournamentFactory {
-	INewTournament createTournament(String name, String location, Date startDate, Date endDate);
+	Tournament createTournament(String name, String location, Date startDate, Date endDate);
 
 }

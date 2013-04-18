@@ -18,10 +18,10 @@ import static org.junit.Assert.*;
 
 public class AddTournamentSteps {
 
-	@When("the user adds a tournament with $name, start date $startDate, end date $endDate and location $location")
-    public void theUserAddsATournamentWith(String name, Date startDate, Date endDate, String location) 
+	@When("the user adds a tournament with name $tournamentName, start date $startDate, end date $endDate and location $location")
+    public void theUserAddsATournamentWith(String tournamentName, Date startDate, Date endDate, String location) 
 	{       
-		TournamentApplicationHelper.createTournament(name, location, startDate, endDate);
+		TournamentApplicationHelper.createTournament(tournamentName, location, startDate, endDate);
     }
  
     @Then("a tournament is created")
