@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.UnitTests.MVPTourmanUI.MVP.Calculator;
+package tourman.UnitTests.MVPTourmanUI.MVP.Calculator;
 
 import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorComponentsFactory;
 import com.gonzalo.tourman.MVPTourmanUI.MVP.Calculator.CalculatorViewImpl;

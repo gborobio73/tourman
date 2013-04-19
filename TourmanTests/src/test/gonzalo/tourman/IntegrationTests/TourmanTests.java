@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.IntegrationTests;
+package tourman.IntegrationTests;
 
 import static org.junit.Assert.*;
 

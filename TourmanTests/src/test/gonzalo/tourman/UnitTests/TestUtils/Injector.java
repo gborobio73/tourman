@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.UnitTests.TestUtils;
+package tourman.UnitTests.TestUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;

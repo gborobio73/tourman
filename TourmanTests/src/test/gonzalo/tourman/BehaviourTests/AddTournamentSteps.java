@@ -1,23 +1,17 @@
-package test.gonzalo.tourman.BehaviourTests;
+package tourman.BehaviourTests;
+
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
 import junit.framework.Assert;
 
-import org.jbehave.core.annotations.*;
+import org.jbehave.core.annotations.BeforeScenario;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 
-import test.gonzalo.tourman.BehaviourTests.StepHelpers.TourmanRepositoryHelper;
-import test.gonzalo.tourman.BehaviourTests.StepHelpers.TournamentApplicationHelper;
-
-import com.gonzalo.tourman.Application.TournamentApplication;
-import com.gonzalo.tourman.Application.TournamentFactory;
-import com.gonzalo.tourman.Application.Configuration.ApplicationConfiguration;
-import com.gonzalo.tourman.MVPTourmanUI.Configuration.MVPTourmanUIDependencies;
-import com.gonzalo.tourman.MVPTourmanUI.MVP.MainMenu.MainMenuViewImpl;
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import static org.junit.Assert.*;
+import tourman.BehaviourTests.StepHelpers.TourmanRepositoryHelper;
+import tourman.BehaviourTests.StepHelpers.TournamentApplicationHelper;
 
 public class AddTournamentSteps {
 

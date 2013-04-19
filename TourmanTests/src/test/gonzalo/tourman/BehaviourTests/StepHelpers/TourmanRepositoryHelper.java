@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.BehaviourTests.StepHelpers;
+package tourman.BehaviourTests.StepHelpers;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,7 +23,7 @@ public class TourmanRepositoryHelper {
 		HectorPersistenceFactory persistenceFactory = new HectorPersistenceFactory.Builder()
 			.defaultConsistencyLevel(ConsistencyLevel.ALL)
 			.clusterName("Test Cluster")
-			.defaultKeySpace("Tourman")
+			.defaultKeySpace("TourmanTest")
 			.contactNodes(contactNodes)
 			.thriftPort(cassandraDefaultPortDefinedInYaml)
 			.entities(entities)

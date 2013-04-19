@@ -3,4 +3,22 @@
   <groupId>TourmanTests</groupId>
   <artifactId>TourmanTests</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.jbehave</groupId>
+  		<artifactId>jbehave-core</artifactId>
+  		<version>4.0-beta-3</version>
+  	</dependency>
+  	<dependency>
+		<groupId>com.google.code.guice</groupId>
+		<artifactId>guice</artifactId>
+		<version>1.0</version>
+	</dependency>
+    <dependency>
+		<groupId>com.vaadin</groupId>
+		<artifactId>vaadin</artifactId>
+		<version>7.0.0.alpha3</version>
+	</dependency>
+                   
+  </dependencies>
 </project>

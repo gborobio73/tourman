@@ -11,6 +11,7 @@ import com.gonzalo.tourman.Application.Configuration.Keyspace;
 import com.gonzalo.tourman.Application.Interfaces.IPersistable;
 import com.gonzalo.tourman.Application.Interfaces.ITourmanRepository;
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 public class TourmanRepository implements ITourmanRepository{
 

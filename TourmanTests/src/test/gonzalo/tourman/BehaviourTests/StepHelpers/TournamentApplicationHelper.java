@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.BehaviourTests.StepHelpers;
+package tourman.BehaviourTests.StepHelpers;
 
 import java.util.Date;
 

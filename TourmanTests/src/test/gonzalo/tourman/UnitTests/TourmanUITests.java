@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.UnitTests;
+package tourman.UnitTests;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;

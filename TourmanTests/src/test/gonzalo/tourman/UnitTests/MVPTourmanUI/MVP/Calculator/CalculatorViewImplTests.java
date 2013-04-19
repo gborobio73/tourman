@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.UnitTests.MVPTourmanUI.MVP.Calculator;
+package tourman.UnitTests.MVPTourmanUI.MVP.Calculator;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;

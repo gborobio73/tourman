@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.BehaviourTests;
+package tourman.BehaviourTests;
 
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;

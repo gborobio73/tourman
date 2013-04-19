@@ -1,4 +1,4 @@
-package test.gonzalo.tourman.UnitTests.TestUtils;
+package tourman.UnitTests.TestUtils;
 
 public interface IInjector<T> {
 
