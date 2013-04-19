@@ -1,14 +1,22 @@
 package com.gonzalo.tourman.Application.Configuration;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import java.lang.annotation.ElementType;
+import java.lang.annotation.Annotation;
 
-import com.google.inject.BindingAnnotation;
+public class RepositoryConfiguration{
+	private String keyspace;
+	private String cluster;
+	
+	public RepositoryConfiguration(String keyspace, String cluster)
+	{
+		this.keyspace = keyspace;
+		this.cluster = cluster;
+	}
+	
+	public String getCluster() {
+		return cluster;
+	}
 
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.PARAMETER})
-@BindingAnnotation
-public @interface RepositoryConfiguration {}
+	public String getKeyspace() {
+		return keyspace;
+	}
+}

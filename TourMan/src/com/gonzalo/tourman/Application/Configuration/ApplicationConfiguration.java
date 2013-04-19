@@ -8,18 +8,18 @@ import com.google.inject.AbstractModule;
 
 public class ApplicationConfiguration extends AbstractModule{
 
-	private String keyspace;
+	private RepositoryConfiguration configuration;
 
-	public ApplicationConfiguration(String keyspace)
+	public ApplicationConfiguration(RepositoryConfiguration configuration)
 	{
-		this.keyspace = keyspace;
+		this.configuration = configuration;
 	}
 	
 	@Override
 	protected void configure() {
 		bind(ITournamentFactory.class).to(TournamentFactory.class);
-		bind(ITourmanRepository.class).to(TourmanRepository.class);
+		bind(ITourmanRepository.class).toInstance(new TourmanRepository(configuration));
 		
-		bindConstant().annotatedWith(Keyspace.class).to(this.keyspace);
+		//bindConstant().annotatedWith(Keyspace.class).to(this.keyspace);
 	}
 }

@@ -8,20 +8,20 @@ import org.firebrandocm.dao.impl.hector.HectorPersistenceFactory;
 import org.firebrandocm.dao.utils.ClassUtil;
 
 import com.gonzalo.tourman.Application.Configuration.Keyspace;
+import com.gonzalo.tourman.Application.Configuration.RepositoryConfiguration;
 import com.gonzalo.tourman.Application.Interfaces.IPersistable;
 import com.gonzalo.tourman.Application.Interfaces.ITourmanRepository;
 import com.google.inject.Inject;
-import com.google.inject.name.Named;
 
 public class TourmanRepository implements ITourmanRepository{
 
 	private HectorPersistenceFactory persistenceFactory;
-	private String keyspace;
+	private RepositoryConfiguration configuration;
 	
 	@Inject
-	public TourmanRepository(@Keyspace String keyspace)
+	public TourmanRepository(RepositoryConfiguration configuration)
 	{
-		this.keyspace = keyspace;
+		this.configuration = configuration;
 	}
 
 	public void persist(IPersistable entity) throws Exception {
@@ -39,8 +39,8 @@ public class TourmanRepository implements ITourmanRepository{
 		List<Class<?>> entities = ClassUtil.get( "com.gonzalo.tourman.Application.Entities", ColumnFamily.class );
 		this.persistenceFactory = new HectorPersistenceFactory.Builder()
 			.defaultConsistencyLevel(ConsistencyLevel.ALL)
-			.clusterName("Test Cluster")
-			.defaultKeySpace(this.keyspace)
+			.clusterName(this.configuration.getCluster())
+			.defaultKeySpace(this.configuration.getKeyspace())
 			.contactNodes(contactNodes)
 			.thriftPort(cassandraDefaultPortDefinedInYaml)
 			.entities(entities)
