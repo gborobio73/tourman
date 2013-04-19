@@ -1,12 +1,4 @@
 .DS_Store
 TourMan/build
-<<<<<<< HEAD
-<<<<<<< HEAD
-TourmanTests/target
-=======
-TourmanTests/target
->>>>>>> fixed tests namespaces
-=======
 Tourman/Target
 TourmanTests/target
->>>>>>> skip build paths
