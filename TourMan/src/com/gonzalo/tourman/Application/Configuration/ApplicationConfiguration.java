@@ -8,9 +8,9 @@ import com.google.inject.AbstractModule;
 
 public class ApplicationConfiguration extends AbstractModule{
 
-	private RepositoryConfiguration configuration;
+	private IRepositoryConfiguration configuration;
 
-	public ApplicationConfiguration(RepositoryConfiguration configuration)
+	public ApplicationConfiguration(IRepositoryConfiguration configuration)
 	{
 		this.configuration = configuration;
 	}

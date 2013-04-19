@@ -1,8 +1,7 @@
 package com.gonzalo.tourman.Application.Configuration;
 
-import java.lang.annotation.Annotation;
 
-public class RepositoryConfiguration{
+public class RepositoryConfiguration implements IRepositoryConfiguration{
 	private String keyspace;
 	private String cluster;
 	

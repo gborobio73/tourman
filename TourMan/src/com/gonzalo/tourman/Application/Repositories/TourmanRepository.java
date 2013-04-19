@@ -1,14 +1,19 @@
 package com.gonzalo.tourman.Application.Repositories;
 
+import static org.firebrandocm.dao.cql.QueryBuilder.allColumns;
+import static org.firebrandocm.dao.cql.QueryBuilder.from;
+import static org.firebrandocm.dao.cql.QueryBuilder.select;
+
 import java.util.List;
 
 import org.apache.cassandra.thrift.ConsistencyLevel;
+import org.firebrandocm.dao.Query;
 import org.firebrandocm.dao.annotations.ColumnFamily;
 import org.firebrandocm.dao.impl.hector.HectorPersistenceFactory;
 import org.firebrandocm.dao.utils.ClassUtil;
 
-import com.gonzalo.tourman.Application.Configuration.Keyspace;
-import com.gonzalo.tourman.Application.Configuration.RepositoryConfiguration;
+import com.gonzalo.tourman.Application.Configuration.IRepositoryConfiguration;
+import com.gonzalo.tourman.Application.Entities.Tournament;
 import com.gonzalo.tourman.Application.Interfaces.IPersistable;
 import com.gonzalo.tourman.Application.Interfaces.ITourmanRepository;
 import com.google.inject.Inject;
@@ -16,10 +21,10 @@ import com.google.inject.Inject;
 public class TourmanRepository implements ITourmanRepository{
 
 	private HectorPersistenceFactory persistenceFactory;
-	private RepositoryConfiguration configuration;
+	private IRepositoryConfiguration configuration;
 	
 	@Inject
-	public TourmanRepository(RepositoryConfiguration configuration)
+	public TourmanRepository(IRepositoryConfiguration configuration)
 	{
 		this.configuration = configuration;
 	}
@@ -30,6 +35,18 @@ public class TourmanRepository implements ITourmanRepository{
 		persistenceFactory.persist(entity);
 		
 		destroyPersistenceFactory();
+	}
+	
+	public List<Tournament> getTournaments() throws Exception
+	{
+		initializePersistenceFactory();
+		
+		List<Tournament> tournaments = 
+				persistenceFactory.getResultList(Tournament.class, 
+						Query.get(select(allColumns(), from(Tournament.class))));
+		
+		destroyPersistenceFactory();
+		return tournaments;
 	}
 
 	private void initializePersistenceFactory() throws Exception {
@@ -51,6 +68,4 @@ public class TourmanRepository implements ITourmanRepository{
 	private void destroyPersistenceFactory() {
 		persistenceFactory.destroy();
 	}
-
-
 }

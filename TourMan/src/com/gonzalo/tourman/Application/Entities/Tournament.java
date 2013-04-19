@@ -11,15 +11,15 @@ import org.firebrandocm.dao.annotations.*;
 
 import com.gonzalo.tourman.Application.Interfaces.IPersistable;
 
-@ColumnFamily
-public class Tournament implements IPersistable {
+@ColumnFamily(consistencyLevel = ConsistencyLevel.ALL)
+public class Tournament implements IPersistable{
 	@Key
     private String id;
 
     @Column(indexed = true)
     private String name;
 
-    @Column
+    @Column(indexed = true)
 	private String location;
     
     //@Column(indexed = true, validationClass = DateType.class)
@@ -30,13 +30,13 @@ public class Tournament implements IPersistable {
     @Transient
     private Date endDate;
 
-    public Tournament(String name, String location, Date startDate, Date endDate) {
+    /*public Tournament(String name, String location, Date startDate, Date endDate) {
     	//this.id = UUID.randomUUID().toString();
 		this.name = name;
 		this.location = location;
 		this.startDate = startDate;
 		this.endDate = endDate;
-	}
+	}*/
     
     public String getId()
     {

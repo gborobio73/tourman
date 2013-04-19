@@ -1,6 +1,7 @@
 package com.gonzalo.tourman.Application;
 
 import java.util.Date;
+import java.util.List;
 
 import com.gonzalo.tourman.Application.Entities.Tournament;
 import com.gonzalo.tourman.Application.Interfaces.ITourmanRepository;
@@ -24,6 +25,10 @@ public class TournamentApplication {
 	{
 		Tournament tournament = factory.createTournament(name, location, startDate, endDate);
 		repository.persist(tournament);
+	}
+
+	public List<Tournament> getTournaments() throws Exception {
+		return repository.getTournaments();
 	}
 
 }
