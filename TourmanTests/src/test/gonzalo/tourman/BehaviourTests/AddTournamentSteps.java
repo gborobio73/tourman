@@ -17,6 +17,8 @@ import tourman.BehaviourTests.StepHelpers.TourmanRepositoryHelper;
 import tourman.BehaviourTests.StepHelpers.TournamentApplicationHelper;
 
 public class AddTournamentSteps {
+	
+	Tournament tournament = null;
 
 	@BeforeScenario
 	public void beforeEachScenario() {	   
@@ -32,17 +34,26 @@ public class AddTournamentSteps {
 			Assert.fail(e.toString());
 		}
     }
- 
-    @Then("a tournament with name $tournamentName is created")
-    public void aTournamentIsCreated(String tournamentName) {
-    	List<Tournament> tournaments;
+	
+	@Then("a tournament is created")
+    public void aTournamentIsCreated() {
 		try {
-			tournaments = TournamentApplicationHelper.getTournaments();
+			List<Tournament>tournaments = TournamentApplicationHelper.getTournaments();
 			assertTrue(tournaments.size() ==1);
-	    	assertTrue (tournaments.get(0).getName().equals(tournamentName));
+			tournament = tournaments.get(0);
 		} catch (Exception e) {
 			Assert.fail(e.toString());
-		}
-    	
+		}   	
     }
+ 
+    @Then("the tournament has name $tournamentName")
+    public void aTournamentHasName(String tournamentName) {
+ 		assertTrue (tournament.getName().equals(tournamentName));
+    }
+    
+    @Then("the tournament has location $location")
+    public void aTournamentHasLocation(String location) {
+ 		assertTrue (tournament.getLocation().equals(location));
+    }
+    
 }
