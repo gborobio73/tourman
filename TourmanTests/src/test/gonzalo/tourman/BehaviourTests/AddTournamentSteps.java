@@ -46,14 +46,23 @@ public class AddTournamentSteps {
 		}   	
     }
  
-    @Then("the tournament has name $tournamentName")
+    @Then("the created tournament has name $tournamentName")
     public void aTournamentHasName(String tournamentName) {
  		assertTrue (tournament.getName().equals(tournamentName));
     }
     
-    @Then("the tournament has location $location")
+    @Then("the created tournament has location $location")
     public void aTournamentHasLocation(String location) {
  		assertTrue (tournament.getLocation().equals(location));
     }
     
+    @Then("the created tournament has start date $startDate")
+    public void aTournamentHasStartDate(Date startDate) {
+ 		assertTrue (tournament.getStartDate().equals(startDate));
+    }
+    
+    @Then("the created tournament has end date $endDate")
+    public void aTournamentHasEndDate(Date endDate) {
+ 		assertTrue (tournament.getEndDate().equals(endDate));
+    }
 }

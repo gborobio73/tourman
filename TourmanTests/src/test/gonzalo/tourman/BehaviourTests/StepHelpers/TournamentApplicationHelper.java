@@ -12,23 +12,23 @@ import com.google.inject.Injector;
 
 public class TournamentApplicationHelper {
 	
+	private static final String keyspace = "TourmanTest";
+	private static final String cluster = "Test Cluster";
 	private static TournamentApplication app;
 
 	public static void createTournament(String name, String location, Date startDate, Date endDate) throws Exception 
 	{
-		TournamentApplication app = getApplication();
-        app.createTournament(name, location, startDate, endDate);
+		getApplication().createTournament(name, location, startDate, endDate);
 	}
 
 	public static List<Tournament> getTournaments() throws Exception {
-		TournamentApplication app = getApplication();
-		return app.getTournaments();
+		return getApplication().getTournaments();
 	}
 	
 	private static TournamentApplication getApplication() {
 		if(app == null){
 			Injector injector = Guice.createInjector(
-					new ApplicationConfiguration( new RepositoryConfiguration("TourmanTest", "Test Cluster")));
+					new ApplicationConfiguration( new RepositoryConfiguration(keyspace, cluster)));
 			app = injector.getInstance(TournamentApplication.class);
 		}
 		return app;

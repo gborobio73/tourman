@@ -14,6 +14,7 @@ import static org.firebrandocm.dao.cql.QueryBuilder.*;
 
 public class TourmanRepositoryHelper {
 
+	//TODO: extract and reuse the factory building
 	public static void emptyRepository() {
 		String[] contactNodes = new String[]{"127.0.0.1"};
 		int cassandraDefaultPortDefinedInYaml = 9160;

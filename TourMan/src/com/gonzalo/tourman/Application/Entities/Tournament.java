@@ -22,12 +22,12 @@ public class Tournament implements IPersistable{
     @Column(indexed = true)
 	private String location;
     
-    //@Column(indexed = true, validationClass = DateType.class)
-    @Transient
+    @Column(indexed = true, validationClass = DateType.class)
+    //@Transient
 	private Date startDate;
     
-    //@Column(validationClass = DateType.class)
-    @Transient
+    @Column(validationClass = DateType.class)
+    //@Transient
     private Date endDate;
 
     /*public Tournament(String name, String location, Date startDate, Date endDate) {
